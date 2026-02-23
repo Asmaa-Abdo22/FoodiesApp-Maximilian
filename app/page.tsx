@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import '@fontsource-variable/montserrat';
 import classes from './page.module.css';
 import ImageSlideShow from '@/components/images/image-slideShow';
 

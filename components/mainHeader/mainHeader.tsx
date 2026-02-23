@@ -1,8 +1,11 @@
+
 import Link from "next/link";
 import logoImg from "@/assets/logo.png";
 import Image from "next/image";
 import MainHeaderBg from "@/components/mainHeader/mainHeaderBg";
+import NavLink from "../NavLink/NavLink";
 const MainHeader = () => {
+
   return (
     <>
       <MainHeaderBg />
@@ -23,20 +26,18 @@ const MainHeader = () => {
         <nav className="mt-4 md:mt-0">
           <ul className="flex gap-6 list-none p-0 m-0 text-xl">
             <li>
-              <Link
+              <NavLink
                 href="/meals"
-                className="no-underline text-[#ddd6cb] font-bold px-4 py-2 rounded-md hover:bg-clip-text hover:bg-linear-to-r hover:from-[#ff8a05] hover:to-[#f9b331] hover:text-transparent hover:drop-shadow-[0_0_1rem_rgba(248,190,42,0.8)] duration-200"
               >
                 Browse Meals
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 href="/community"
-                className="no-underline text-[#ddd6cb] font-bold px-4 py-2 rounded-md hover:bg-clip-text hover:bg-linear-to-r hover:from-[#ff8a05] hover:to-[#f9b331] hover:text-transparent hover:drop-shadow-[0_0_1rem_rgba(248,190,42,0.8)] duration-200"
               >
                 Foodies Community
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
