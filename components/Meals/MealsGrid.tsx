@@ -17,7 +17,7 @@ const MealsGrid = ({ meals }: { meals: Meal[] }) => {
       {meals.map((meal) => (
         <li
           key={meal.id}
-          className="bg-[#2a2a2a] text-[#ddd6cb] font-montserrat font-bold p-4 rounded-lg text-center shadow-md hover:scale-105 transition-transform duration-200"
+          className="bg-[#2a2a2a] text-[#ddd6cb] font-montserrat font-bold p-4 rounded-lg text-center shadow-md  transition-transform duration-200"
         >
           <MealItem
             title={meal.title}
