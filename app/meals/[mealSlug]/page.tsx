@@ -1,5 +1,13 @@
 import { getMealBySlug } from "@/lib/meals";
 import Image from "next/image";
+import burgerImg from "@/assets/burger.jpg";
+import curryImg from "@/assets/curry.jpg";
+import dumplingsImg from "@/assets/dumplings.jpg";
+import macncheeseImg from "@/assets/macncheese.jpg";
+import pizzaImg from "@/assets/pizza.jpg";
+import schnitzelImg from "@/assets/schnitzel.jpg";
+import tomatoSaladImg from "@/assets/tomato-salad.jpg";
+import { notFound } from "next/navigation";
 
 const MealSlugPage = async ({
   params,
@@ -8,6 +16,31 @@ const MealSlugPage = async ({
 }) => {
   const { mealSlug } = await params;
   const meal = getMealBySlug(mealSlug);
+  if (!meal) {
+    notFound();
+  }
+  const imageMap: Record<string, any> = {
+    "burger.jpg": burgerImg,
+    "curry.jpg": curryImg,
+    "dumplings.jpg": dumplingsImg,
+    "macncheese.jpg": macncheeseImg,
+    "pizza.jpg": pizzaImg,
+    "schnitzel.jpg": schnitzelImg,
+    "tomato-salad.jpg": tomatoSaladImg,
+  };
+
+  const filename =
+    typeof meal.image === "string"
+      ? meal.image.split("/").pop() || meal.image
+      : undefined;
+
+  const imageSrc =
+    filename && imageMap[filename]
+      ? imageMap[filename]
+      : typeof meal.image === "string" && meal.image.startsWith("/images/")
+        ? meal.image.replace("/images/", "/")
+        : meal.image;
+
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 
   return (
@@ -16,7 +49,7 @@ const MealSlugPage = async ({
         <div className="relative w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-xl">
           <Image
             fill
-            src={meal.image}
+            src={imageSrc}
             alt={meal.title}
             className="object-cover"
           />
