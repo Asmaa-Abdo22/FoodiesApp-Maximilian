@@ -37,9 +37,7 @@ const MealSlugPage = async ({
   const imageSrc =
     filename && imageMap[filename]
       ? imageMap[filename]
-      : typeof meal.image === "string" && meal.image.startsWith("/images/")
-        ? meal.image.replace("/images/", "/")
-        : meal.image;
+      : meal.image;
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 

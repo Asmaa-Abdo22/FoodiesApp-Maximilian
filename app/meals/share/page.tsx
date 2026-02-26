@@ -1,3 +1,4 @@
+import { shareMeal } from "@/lib/actions";
 import ImagePicker from "../ImagePicker/ImagePicker";
 
 export default function ShareMealPage() {
@@ -16,7 +17,10 @@ export default function ShareMealPage() {
       </header>
 
       <main className="max-w-3xl mx-auto">
-        <form className="space-y-6 bg-[#2a1f18] p-8 rounded-xl shadow-xl">
+        <form
+          className="space-y-6 bg-[#2a1f18] p-8 rounded-xl shadow-xl"
+          action={shareMeal}
+        >
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex flex-col">
               <label htmlFor="name" className="mb-2 font-semibold">
@@ -83,7 +87,7 @@ export default function ShareMealPage() {
               className="inputStyle resize-none"
             />
           </div>
-          <ImagePicker/>
+          <ImagePicker label="Your meal image" name="image" />
           <div className="text-right">
             <button
               type="submit"
@@ -92,7 +96,6 @@ export default function ShareMealPage() {
               Share Meal
             </button>
           </div>
-
         </form>
       </main>
     </div>

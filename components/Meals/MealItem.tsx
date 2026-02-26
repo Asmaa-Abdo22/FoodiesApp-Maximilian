@@ -33,9 +33,7 @@ const MealItem = ({ title, slug, image, summary, creator }: MealItemProps) => {
   const src =
     filename && imageMap[filename]
       ? imageMap[filename]
-      : image?.startsWith("/images/")
-        ? image.replace("/images/", "/")
-        : image;
+      : image;
 
   return (
     <article className="flex flex-col h-full rounded-xl shadow-xl overflow-hidden bg-linear-to-r from-[#2c1e19] to-[#25200f] text-[#ddd6cb] transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
