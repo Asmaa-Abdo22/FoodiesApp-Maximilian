@@ -19,6 +19,7 @@ Foodies App is a small demo web application built while following Maximilian Sch
 ## Getting Started
 
 Prerequisites:
+
 - Node.js (14+ recommended)
 
 Install dependencies:
@@ -42,7 +43,7 @@ npm run build
 npm start
 ```
 
-## Database 
+## Database
 
 This repository includes an `initdb.ts` script used to create or populate a small local database for demonstration. If you want to use it, run it with a TypeScript runner such as `ts-node` or compile it first. See the file for implementation details.
 
@@ -58,11 +59,6 @@ This repository includes an `initdb.ts` script used to create or populate a smal
 
 This is an educational project and not intended for production use. It’s a great reference for learning how to structure Next.js apps with the App Router and TypeScript.
 
-
 ## License
 
-This project is provided for learning purposes. 
-
-
-
-
+This project is provided for learning purposes.
