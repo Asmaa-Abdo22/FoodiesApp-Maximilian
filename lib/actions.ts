@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { saveMeal } from "./meals";
+import { revalidatePath } from "next/cache";
 
 export async function shareMeal(formData: FormData) {
   const title = formData.get("title");
@@ -37,6 +38,6 @@ export async function shareMeal(formData: FormData) {
     creator: creator.trim(),
     creator_email: creator_email.trim(),
   });
-
+  revalidatePath("/meals");
   redirect("/meals");
 }

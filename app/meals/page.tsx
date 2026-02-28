@@ -3,6 +3,11 @@ import { getMeals } from "@/lib/meals";
 import Link from "next/link";
 import { Suspense } from "react";
 import LoadingMeals from "./loading-out";
+export const metadata = {
+  title: "Meals - Share Your Favorite Recipes",
+  description:
+    "Discover and share delicious meal recipes created by our community. Find your next favorite dish and cook it yourself!",
+};
 const GetMealsData = async () => {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;

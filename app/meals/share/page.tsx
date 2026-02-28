@@ -1,6 +1,11 @@
 import { shareMeal } from "@/lib/actions";
 import ImagePicker from "../ImagePicker/ImagePicker";
+import MealsFrormSubmit from "@/components/Meals/MealsFrormSubmit";
 
+export const metadata = {
+  title: "Share Your Meal",
+  description: "Share your favorite meal with the world!",
+};
 export default function ShareMealPage() {
   return (
     <div className="min-h-screen rounded-xl bg-[#1c1410] text-[#ddd6cb] px-6 py-12">
@@ -89,12 +94,7 @@ export default function ShareMealPage() {
           </div>
           <ImagePicker label="Your meal image" name="image" />
           <div className="text-right">
-            <button
-              type="submit"
-              className="cursor-pointer px-8 py-3 rounded-lg bg-linear-to-r from-[#f9572a] to-[#ff9b05] text-white font-semibold  transition-transform duration-300 shadow-lg"
-            >
-              Share Meal
-            </button>
+            <MealsFrormSubmit />
           </div>
         </form>
       </main>

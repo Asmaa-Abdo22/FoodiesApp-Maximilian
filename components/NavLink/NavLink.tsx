@@ -15,7 +15,7 @@ const NavLink = ({ href, children }: NavLinkProps) => {
   return (
     <Link
       href={href}
-      className={`no-underline font-bold px-4 py-2 rounded-md transition-all duration-200 ${
+      className={`no-underline font-bold px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-md transition-all duration-200 ${
         path?.startsWith(href)
           ? "bg-linear-to-r from-[#fd4715] to-[#f9b241] text-white"
           : "text-[#ddd6cb] hover:bg-clip-text hover:bg-linear-to-r hover:from-[#ff8a05] hover:to-[#f9b331] hover:text-transparent"

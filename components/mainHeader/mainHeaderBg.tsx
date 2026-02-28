@@ -2,7 +2,7 @@ import React from "react";
 
 const mainHeaderBg = () => {
   return (
-    <div className=" overflow-hidden w-full h-80 absolute top-0 left-0 -z-10">
+    <div className="overflow-hidden w-full h-48 sm:h-64 md:h-80 absolute top-0 left-0 -z-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"

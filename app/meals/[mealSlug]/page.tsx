@@ -9,6 +9,14 @@ import schnitzelImg from "@/assets/schnitzel.jpg";
 import tomatoSaladImg from "@/assets/tomato-salad.jpg";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({params}:{params:Promise<{mealSlug:string}>}) {
+  const { mealSlug } = await params;
+  const meal = getMealBySlug(mealSlug);
+  return{
+    title: meal ? meal.title : "Meal Not Found",
+    description: meal ? meal.summary : "The meal you are looking for does not exist.",
+  }
+}
 const MealSlugPage = async ({
   params,
 }: {
@@ -35,9 +43,7 @@ const MealSlugPage = async ({
       : undefined;
 
   const imageSrc =
-    filename && imageMap[filename]
-      ? imageMap[filename]
-      : meal.image;
+    filename && imageMap[filename] ? imageMap[filename] : meal.image;
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 

@@ -29,19 +29,19 @@ const ImagePicker = ({ label, name }: PropsValues) => {
   };
 
   return (
-    <div className="rounded-xl overflow-hidden p-2">
-      <label htmlFor={name}>{label}</label>
-      <div className="controls">
+    <div className="rounded-xl overflow-hidden p-2 sm:p-3">
+      <label htmlFor={name} className="text-sm sm:text-base">{label}</label>
+      <div className="controls mt-1">
         <img
           src={pickedImage ?? PLACEHOLDER_SRC}
           alt={pickedImage ? "Picked meal" : "No image chosen"}
           width={80}
           height={60}
-          className={
+          className={`w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 max-w-full ${
             pickedImage
               ? "object-cover rounded-lg"
-              : "border-[5px] border-orange-300 border-dashed rounded-lg"
-          }
+              : "border-2 sm:border-[5px] border-orange-300 border-dashed rounded-lg"
+          }`}
         />
 
         <input
@@ -57,7 +57,7 @@ const ImagePicker = ({ label, name }: PropsValues) => {
       </div>
 
       <button
-        className="cursor-pointer mt-2 px-4 py-1 bg-linear-to-r from-[#ef7e3c] to-[#894106] rounded-xl"
+        className="cursor-pointer mt-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-linear-to-r from-[#ef7e3c] to-[#894106] rounded-xl"
         type="button"
         onClick={handlePickClick}
       >

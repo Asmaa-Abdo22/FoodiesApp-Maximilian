@@ -1,23 +1,66 @@
 .header {
   display: flex;
-  gap: 3rem;
-  margin: 3rem auto;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem auto;
   width: 90%;
   max-width: 75rem;
 }
 
+@media (min-width: 640px) {
+  .header {
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2.5rem auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    gap: 3rem;
+    margin: 3rem auto;
+  }
+}
+
 .slideshow {
-  width: 40rem;
-  height: 25rem;
+  width: 100%;
+  height: 12rem;
+  min-height: 12rem;
+}
+
+@media (min-width: 640px) {
+  .slideshow {
+    width: 28rem;
+    height: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideshow {
+    width: 40rem;
+    height: 25rem;
+  }
 }
 
 .hero {
   color: #ddd6cb;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    font-size: 1.5rem;
+  }
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.15rem;
@@ -28,10 +71,36 @@
   -webkit-text-fill-color: transparent;
 }
 
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
 .cta {
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .cta {
+    font-size: 1.25rem;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta {
+    font-size: 1.5rem;
+  }
 }
 
 .cta a {
@@ -68,9 +137,22 @@
   display: flex;
   flex-direction: column;
   color: #ddd6cb;
-  font-size: 1.5rem;
+  font-size: 1rem;
   max-width: 50rem;
   width: 90%;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .section {
+    font-size: 1.25rem;
+    margin: 2rem auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    font-size: 1.5rem;
+  }
 }

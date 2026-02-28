@@ -2,6 +2,11 @@ import Image from "next/image";
 import mealIcon from "@/assets/icons/meal.png";
 import communityIcon from "@/assets/icons/community.png";
 import eventsIcon from "@/assets/icons/events.png";
+export const metadata = {
+  title: "Community - Foodie Haven",
+  description:
+    "Join our food-loving community and share your favorite recipes!",
+};
 
 export default function CommunityPage() {
   return (
